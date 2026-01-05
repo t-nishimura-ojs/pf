@@ -1,0 +1,42 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+	/* ページ自体の縦スクロールを殺す */
+}
+
+main {
+	/* ← 余った縦幅を全部ここに割り当てる */
+	display: block;
+	margin: 0;
+}
+
+.horizontal {
+	height: 100vh;
+}
+
+.horizontal .sticky {
+	/* stickyいらない。固定領域として使う */
+	height: 100%;
+	overflow: hidden;
+}
+
+.horizontal .track {
+	display: flex;
+	height: 100%;
+	overflow-x: auto;
+	/* 横スクロールの実体 */
+	overflow-y: hidden;
+	/* 縦を殺す */
+	scroll-behavior: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.horizontal .panel {
+	flex: 0 0 auto;
+	width: 100vw;
+	height: 100%;
+}
