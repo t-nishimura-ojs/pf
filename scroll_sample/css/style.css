@@ -22,6 +22,7 @@ body {
 a {
 	text-decoration: none;
 }
+
 a:link,
 a:visited {
 	color: white;
@@ -32,7 +33,7 @@ img {
 }
 
 .wrapper {
-	min-height: 100vh;
+	min-height: 100vw;
 	display: flex;
 	flex-direction: column;
 }
@@ -44,14 +45,30 @@ header {
 	margin: 1em 1.5em;
 }
 
+header h1 img {
+	max-width: 327px;
+}
+
+nav ul {
+	list-style-position: inside;
+	font-size: 1.5em;
+}
+
 main {
 	flex: 1;
 	/* ← 余った縦幅を全部ここに割り当てる */
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	margin: 8px;
 }
-
+section {
+	width: 110vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
 footer {
 	text-align: center;
 	margin-top: auto;
@@ -93,6 +110,7 @@ nav#menu ul {
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
+	display: flex;
 }
 
 #about .box {
@@ -124,11 +142,6 @@ nav#menu ul {
 	letter-spacing: 3px;
 }
 
-#about ul {
-	list-style-position: inside;
-	font-size: 1.5em;
-}
-
 /* ---------- */
 /* gallery */
 /* ---------- */
@@ -139,6 +152,24 @@ nav#menu ul {
 	background-size: cover;
 }
 
+#gallery h2 {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+#gallery main {
+	flex-direction: column;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.gallery_box {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 8px;
+	line-height: 2px;
+}
 
 /* ---------- */
 /* contact */
@@ -150,6 +181,60 @@ nav#menu ul {
 	background-size: cover;
 }
 
+#contact main {
+	flex-direction: column;
+}
+
+#contact form {
+	transform: translateX(-5%);
+	width: 600px;
+}
+
+#contact input,
+#contact textarea {
+	background-color: white;
+	margin: 0 1em;
+	padding: 8px 40px;
+	border-radius: 42px;
+	width: 100%;
+}
+
+#contact textarea {
+	height: 380px;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+	color: #E0E0E0;
+}
+
+#contact input[type="submit"] {
+	background-color: #62D0FF;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 12px;
+	transform: translateX(12%);
+	width: 200px;
+}
+
+#contact form span {
+	width: 4em;
+}
+
+#contact p {
+	margin: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 565px;
+}
+
+#contact .question:nth-child(1),
+#contact .question:nth-child(2) {
+	letter-spacing: 0.1em;
+}
 
 /* ―――――――――――――――――――― */
 /* スマホ対応 */
@@ -160,13 +245,16 @@ nav#menu ul {
 		align-content: center;
 		gap: 14px;
 	}
+
 	.about_huki {
 		text-align: center;
 	}
+
 	#about h2 {
 		text-align: center;
 		font-size: 3em;
 	}
+
 	#about ul {
 		margin: 0 auto;
 		font-size: 1em;
