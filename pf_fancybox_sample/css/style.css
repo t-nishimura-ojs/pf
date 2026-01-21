@@ -1,0 +1,255 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+
+/* 共通部分
+------------------------------- */
+::-webkit-scrollbar {
+	display: none;
+}
+
+html {
+	font-size: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Darumadrop One";
+	line-height: 1.7;
+	color: rgb(255, 255, 255);
+	background-color: #FFC300;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link,
+a:visited {
+	color: white;
+}
+
+img {
+	max-width: 100%;
+}
+
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin: 1em 1.5em;
+}
+
+header h1 img {
+	max-width: 327px;
+}
+
+nav ul {
+	list-style-position: inside;
+	font-size: 1.5em;
+}
+
+main {
+	flex: 1;
+	/* ← 余った縦幅を全部ここに割り当てる */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 8px;
+}
+
+footer {
+	text-align: center;
+	margin-top: auto;
+	/* ← 常に下に固定される */
+	position: static;
+	/* ← absolute をやめる */
+}
+
+nav#menu ul {
+	list-style: none;
+	display: flex;
+	gap: 1em;
+	font-size: 2em;
+}
+
+/* ---------- */
+/* index */
+/* ---------- */
+#index {
+	background-image: url(../img/bk_top.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.keyvis {
+	width: 100vw;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ---------- */
+/* about */
+/* ---------- */
+#about {
+	background-image: url(../img/bk_about.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#about .box {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.about_l {
+	/* background-color: rgba(240, 248, 255, 0.354); */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about_thum {
+	width: 40vw;
+	text-align: center;
+}
+
+.about_r {
+	/* background-color: rgba(76, 155, 225, 0.293); */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#about h2 {
+	font-size: 5em;
+	letter-spacing: 3px;
+}
+
+/* ---------- */
+/* gallery */
+/* ---------- */
+#gallery {
+	background-image: url(../img/bk_gallery.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#gallery h2 {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+#gallery main {
+	flex-direction: column;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.gallery_box {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 8px;
+	line-height: 2px;
+}
+
+/* ---------- */
+/* contact */
+/* ---------- */
+#contact {
+	background-image: url(../img/bk_contact.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#contact main {
+	flex-direction: column;
+}
+
+#contact form {
+	transform: translateX(-5%);
+	width: 600px;
+}
+
+#contact input,
+#contact textarea {
+	background-color: white;
+	margin: 0 1em;
+	padding: 8px 40px;
+	border-radius: 42px;
+	width: 100%;
+}
+
+#contact textarea {
+	height: 380px;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+	color: #E0E0E0;
+}
+
+#contact input[type="submit"] {
+	background-color: #62D0FF;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 12px;
+	transform: translateX(12%);
+	width: 200px;
+}
+
+#contact form span {
+	width: 4em;
+}
+
+#contact p {
+	margin: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 565px;
+}
+
+#contact .question:nth-child(1),
+#contact .question:nth-child(2) {
+	letter-spacing: 0.1em;
+}
+
+/* ―――――――――――――――――――― */
+/* スマホ対応 */
+/* ―――――――――――――――――――― */
+@media screen and (max-width:1045px) {
+	#about main {
+		grid-template-columns: 1fr;
+		align-content: center;
+		gap: 14px;
+	}
+
+	.about_huki {
+		text-align: center;
+	}
+
+	#about h2 {
+		text-align: center;
+		font-size: 3em;
+	}
+
+	#about ul {
+		margin: 0 auto;
+		font-size: 1em;
+	}
+}
